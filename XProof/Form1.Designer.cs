@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.filenames = new System.Windows.Forms.TextBox();
             this.chooseButton = new System.Windows.Forms.Button();
             this.runButton = new System.Windows.Forms.Button();
@@ -102,6 +103,7 @@
             this.Controls.Add(this.runButton);
             this.Controls.Add(this.chooseButton);
             this.Controls.Add(this.filenames);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(200, 120);
             this.Name = "Form1";
             this.Text = "XProof";

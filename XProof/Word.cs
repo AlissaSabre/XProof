@@ -29,7 +29,7 @@ namespace XProof
                 try
                 {
                     word.Visible = false;
-                    word.Quit();
+                    word.Quit(WdSaveOptions.wdDoNotSaveChanges);
                 }
                 catch (Exception) { }
                 word.Dispose();

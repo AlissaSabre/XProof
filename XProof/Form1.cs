@@ -75,7 +75,6 @@ namespace XProof
                     dlg.ShowDialog(this);
                 }
             }
-            backgroundWorker.RunWorkerAsync(null);
             runButton.Enabled = true;
             UseWaitCursor = false;
         }

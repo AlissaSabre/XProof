@@ -11,10 +11,13 @@ namespace XProof
 {
     class Proofreader : IDisposable
     {
+        private Word Word = new Word();
+
         private readonly List<string> TempFilenames = new List<string>();
 
         public void Dispose()
         {
+            Word.Dispose();
             foreach (var f in TempFilenames)
             {
                 try
@@ -43,6 +46,11 @@ namespace XProof
             tr.SaveTo(tmp);
 
             Word.Open(tmp);
+        }
+
+        public void Shutdown()
+        {
+            Word.Shutdown();
         }
     }
 }

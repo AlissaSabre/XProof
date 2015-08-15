@@ -10,7 +10,15 @@ namespace XProof
 {
     class Word : IDisposable
     {
-        private Application WordApp = null;
+        private Application WordApp = new Application()
+        {
+            DisplayAlerts = WdAlertLevel.wdAlertsNone,
+#if DEBUG
+            Visible = true,
+#else
+            Visible = false,
+#endif
+        };
 
         public void Dispose()
         {
@@ -18,24 +26,20 @@ namespace XProof
             WordApp = null;
             if (word != null)
             {
+                try
+                {
+                    word.Visible = false;
+                    word.Quit();
+                }
+                catch (Exception) { }
                 word.Dispose();
             }
         }
 
-        public void Open(string filename)
+        public void Proofread(string filename)
         {
-            if (WordApp == null)
-            {
-                WordApp = new Application();
-                WordApp.DisplayAlerts = WdAlertLevel.wdAlertsNone;
-#if DEBUG
-                WordApp.Visible = true;
-#else
-                WordApp.Visible = false;
-#endif
-            };
-
             var word = WordApp;
+
             var doc = word.Documents.Open(filename);
             word.ActiveWindow.View.Draft = true;
             doc.Select();
@@ -44,17 +48,8 @@ namespace XProof
             word.Selection.Move();
             word.Visible = true;
             doc.CheckGrammar();
-            word.DisposeChildInstances();
-        }
 
-        public void Shutdown()
-        {
-            var word = WordApp;
-            if (word != null)
-            {
-                word.ActiveDocument.Close();
-                word.DisposeChildInstances();
-            }
+            word.DisposeChildInstances();
         }
     }
 }

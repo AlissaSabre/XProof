@@ -62,38 +62,18 @@ namespace XProof
         private void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {
             var filenames = e.Argument as string[];
-            if (filenames != null)
-            {
-                Proof.DoProof(filenames);
-                e.Result = false;
-            }
-            else
-            {
-                Proof.Shutdown();
-                e.Result = true;
-            }
+            Proof.DoProof(filenames);
         }
 
         private void backgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            var after_shutdown = (bool)e.Result;
-            if (after_shutdown) return;
-
-            bool shutdown;
-            if (e.Error == null)
-            {
-                this.Activate();
-                var result = MessageBox.Show(this, "Grammar check completed.\r\nDo you want to close the Word window?", "Message - XProof", MessageBoxButtons.YesNo);
-                shutdown = (result == DialogResult.Yes);
-            }
-            else
+            if (e.Error != null)
             {
                 using (var dlg = new ExceptionDialog())
                 {
                     dlg.Exception = e.Error;
                     dlg.ShowDialog(this);
                 }
-                shutdown = true;
             }
             backgroundWorker.RunWorkerAsync(null);
             runButton.Enabled = true;

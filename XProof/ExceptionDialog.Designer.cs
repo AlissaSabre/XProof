@@ -80,7 +80,12 @@
             this.Controls.Add(this.ok);
             this.Controls.Add(this.details);
             this.Controls.Add(this.message);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ExceptionDialog";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Exception - XProof";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -26,7 +26,6 @@ namespace XProof
                 word.Visible = true;
                 doc.CheckGrammar();
             }
-
         }
     }
 }

@@ -66,7 +66,11 @@ namespace XProof
 
         private void backgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            if (e.Error != null)
+            if (e.Error == null)
+            {
+                MessageBox.Show(this, "Grammar Check completed.");
+            }
+            else
             {
                 using (var dlg = new ExceptionDialog())
                 {

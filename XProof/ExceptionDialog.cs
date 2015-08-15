@@ -14,7 +14,6 @@ namespace XProof
         public ExceptionDialog()
         {
             InitializeComponent();
-            Icon = Application.OpenForms.Cast<Form>().First(f => f.ShowIcon).Icon;
         }
 
         private Exception _Exception;

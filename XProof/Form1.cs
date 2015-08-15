@@ -68,6 +68,7 @@ namespace XProof
         {
             if (e.Error == null)
             {
+                this.Activate();
                 MessageBox.Show(this, "Grammar Check completed.");
             }
             else

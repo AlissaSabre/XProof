@@ -1,8 +1,10 @@
 
+rem
 echo off
-PATH=C:\Program Files (x86)\WiX Toolset v3.9\bin;%PATH%
+set PATH=C:\Program Files (x86)\WiX Toolset v3.10\bin;%PATH%
+set TARGET=XProof-X.X.X-setup.msi
 cd "%1"bin\Release
 candle ..\..\installer.wsx
 light installer.wixobj
-del XProof-X.X.X-setup.msi
-ren installer.msi XProof-X.X.X-setup.msi
+if exist "%TARGET%" del "%TARGET%"
+ren installer.msi "%TARGET%"

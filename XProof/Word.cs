@@ -42,6 +42,7 @@ namespace XProof
 
             var doc = word.Documents.Open(filename);
             word.ActiveWindow.View.Draft = true;
+            word.ActiveWindow.WindowState = WdWindowState.wdWindowStateMaximize;
             doc.Select();
             doc.GrammarChecked = false;
             doc.SpellingChecked = false;

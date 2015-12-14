@@ -42,18 +42,18 @@
             this.filenames.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.filenames.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.filenames.Location = new System.Drawing.Point(12, 12);
+            this.filenames.Location = new System.Drawing.Point(12, 11);
             this.filenames.Name = "filenames";
             this.filenames.ReadOnly = true;
-            this.filenames.Size = new System.Drawing.Size(325, 20);
+            this.filenames.Size = new System.Drawing.Size(325, 19);
             this.filenames.TabIndex = 0;
             // 
             // chooseButton
             // 
             this.chooseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.chooseButton.Location = new System.Drawing.Point(343, 12);
+            this.chooseButton.Location = new System.Drawing.Point(343, 11);
             this.chooseButton.Name = "chooseButton";
-            this.chooseButton.Size = new System.Drawing.Size(28, 20);
+            this.chooseButton.Size = new System.Drawing.Size(28, 18);
             this.chooseButton.TabIndex = 1;
             this.chooseButton.Text = "...";
             this.chooseButton.UseVisualStyleBackColor = true;
@@ -62,9 +62,9 @@
             // runButton
             // 
             this.runButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.runButton.Location = new System.Drawing.Point(216, 47);
+            this.runButton.Location = new System.Drawing.Point(216, 43);
             this.runButton.Name = "runButton";
-            this.runButton.Size = new System.Drawing.Size(75, 23);
+            this.runButton.Size = new System.Drawing.Size(75, 21);
             this.runButton.TabIndex = 2;
             this.runButton.Text = "Run";
             this.runButton.UseVisualStyleBackColor = true;
@@ -73,9 +73,9 @@
             // closeButton
             // 
             this.closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.closeButton.Location = new System.Drawing.Point(297, 47);
+            this.closeButton.Location = new System.Drawing.Point(297, 43);
             this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(75, 23);
+            this.closeButton.Size = new System.Drawing.Size(75, 21);
             this.closeButton.TabIndex = 3;
             this.closeButton.Text = "Close";
             this.closeButton.UseVisualStyleBackColor = true;
@@ -84,8 +84,7 @@
             // openFileDialog
             // 
             this.openFileDialog.AddExtension = false;
-            this.openFileDialog.Filter = "Idiom packages|*.xlz|WS packages|*.wsxz|memoQ bilingual files|*.mqxlz;*.mqxliff|X" +
-    "LIFF files|*.xlf;*.xliff|All files|*.*";
+            this.openFileDialog.Filter = resources.GetString("openFileDialog.Filter");
             this.openFileDialog.Multiselect = true;
             this.openFileDialog.SupportMultiDottedExtensions = true;
             // 
@@ -96,15 +95,15 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 82);
+            this.ClientSize = new System.Drawing.Size(384, 76);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.runButton);
             this.Controls.Add(this.chooseButton);
             this.Controls.Add(this.filenames);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(200, 120);
+            this.MinimumSize = new System.Drawing.Size(200, 114);
             this.Name = "Form1";
             this.Text = "XProof";
             this.ResumeLayout(false);

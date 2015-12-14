@@ -120,6 +120,9 @@
   <metadata name="openFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="openFileDialog.Filter" xml:space="preserve">
+    <value>All known files|*.xlz;*.wsxz;*.mqxlz;*.mqxliff;*.sdlxliff;*.xlf;*.xliff|Idiom packages|*.xlz|WS packages|*.wsxz|memoQ bilingual files|*.mqxlz;*.mqxliff|Trados Studio files|*.sdlxliff|Generic XLIFF files|*.xlf;*.xliff|All files|*.*</value>
+  </data>
   <metadata name="backgroundWorker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>156, 17</value>
   </metadata>

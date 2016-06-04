@@ -1,7 +1,7 @@
 
 rem
 echo off
-set PATH=C:\Program Files (x86)\WiX Toolset v3.10\bin;%PATH%
+set PATH=%WIX%bin;%PATH%
 set TARGET=XProof-X.X.X-setup.msi
 cd "%1"bin\Release
 candle ..\..\installer.wsx

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace XProof
 {
-    class Proofreader : IDisposable
+    public class Proofreader : IDisposable
     {
         private readonly List<string> TempFilenames = new List<string>();
 

@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Text;
 using System.Xml;
 using System.Xml.Linq;
-
-using Ionic.Zip;
 
 namespace XProof
 {
@@ -39,11 +38,11 @@ namespace XProof
             {
                 if (IsZipStream(stream))
                 {
-                    using (var zip = ZipFile.Read(stream))
+                    using (var zip = new ZipArchive(stream, ZipArchiveMode.Read))
                     {
-                        foreach (var entry in zip.Entries.Where(e => !e.IsDirectory))
+                        foreach (var entry in zip.Entries)
                         {
-                            using (var content = entry.OpenReader())
+                            using (var content = entry.Open())
                             {
                                 read |= TryFeedStream(content);
                             }
@@ -66,9 +65,10 @@ namespace XProof
             long pos = stream.Seek(0, SeekOrigin.Current);
             try
             {
-                var header = new byte[4];
-                if (stream.Read(header, 0, header.Length) != header.Length) return false;
-                return header[0] == 'P' && header[1] == 'K' && header[2] == 3 && header[3] == 4;
+                return stream.ReadByte() == 'P'
+                    && stream.ReadByte() == 'K'
+                    && stream.ReadByte() == 3
+                    && stream.ReadByte() == 4;
             }
             finally
             {
@@ -230,17 +230,13 @@ namespace XProof
 
         public void SaveTo(string filename)
         {
-            byte[] bytes;
-            using (var wpml = new MemoryStream())
+            File.Copy(GetSupportFilePath("Empty.docx"), filename, true);
+            using (var zip = ZipFile.Open(filename, ZipArchiveMode.Update))
             {
-                Doc.Save(wpml, SaveOptions.DisableFormatting);
-                bytes = wpml.ToArray();
-            }
-            using (var zip = ZipFile.Read(GetSupportFilePath("Empty.docx")))
-            {
-                zip.RemoveEntry("word/document.xml");
-                zip.AddEntry("word/document.xml", bytes);
-                zip.Save(filename);
+                using (var wpml = zip.GetEntry("word/document.xml").Open())
+                {
+                    Doc.Save(wpml, SaveOptions.DisableFormatting);
+                }
             }
         }
 

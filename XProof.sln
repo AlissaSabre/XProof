@@ -1,7 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Express 2012 for Windows Desktop
+# Visual Studio Express 14 for Windows Desktop
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XProof", "XProof\XProof.csproj", "{70269CAC-2292-4ECB-8DA2-982072527154}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XProofCmd", "XProofCmd\XProofCmd.csproj", "{C4B7A25D-8FBF-4B0E-87EA-2A65FDC157DC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +17,10 @@ Global
 		{70269CAC-2292-4ECB-8DA2-982072527154}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70269CAC-2292-4ECB-8DA2-982072527154}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70269CAC-2292-4ECB-8DA2-982072527154}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4B7A25D-8FBF-4B0E-87EA-2A65FDC157DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4B7A25D-8FBF-4B0E-87EA-2A65FDC157DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4B7A25D-8FBF-4B0E-87EA-2A65FDC157DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4B7A25D-8FBF-4B0E-87EA-2A65FDC157DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

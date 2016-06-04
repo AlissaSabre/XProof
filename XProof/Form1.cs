@@ -83,7 +83,6 @@ namespace XProof
             runButton.Enabled = true;
             UseWaitCursor = false;
             Activate();
-            MessageBox.Show(this, "Check completed.", "AppTitle");
         }
 
         private void closeButton_Click(object sender, EventArgs e)

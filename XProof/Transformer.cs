@@ -11,10 +11,7 @@ namespace XProof
 {
     class Transformer
     {
-        private static readonly XNamespace SDL = XNamespace.Get("http://sdl.com/FileTypes/SdlXliff/1.0");
         private static readonly XNamespace IWS = XNamespace.Get("http://www.idiominc.com/ws/asset");
-        private static readonly XNamespace MQ = XNamespace.Get("MQXliff"); // This is NOT a placeholder; it's real!  :(
-
         private static readonly XNamespace W = XNamespace.Get("http://schemas.openxmlformats.org/wordprocessingml/2006/main");
 
         private static XName XML_LANG = XNamespace.Xml + "lang";

@@ -17,9 +17,12 @@ namespace XProof
         {
             InitializeComponent();
 
+            AppTitle = Text;
             Disposed += Form1_Disposed;
             Application.ThreadException += Application_ThreadException;
         }
+
+        private readonly string AppTitle;
 
         private readonly Proofreader Proof = new Proofreader();
 
@@ -56,6 +59,7 @@ namespace XProof
         {
             UseWaitCursor = true;
             runButton.Enabled = false;
+            Text = "Checking - XProof";
             backgroundWorker.RunWorkerAsync(openFileDialog.FileNames);
         }
 
@@ -75,6 +79,7 @@ namespace XProof
                     dlg.ShowDialog(this);
                 }
             }
+            Text = AppTitle;
             runButton.Enabled = true;
             UseWaitCursor = false;
         }

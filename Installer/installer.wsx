@@ -40,9 +40,15 @@
                         Icon='XProof.exe'/>
             </Component>
 
+            <Component Id='XProofCmd.exe' Guid='ACFACB18-3A4C-4126-828D-C7461572DF27'>
+              <File Name='XProofCmd.exe' Source='XProofCmd.exe' KeyPath='yes' />
+            </Component>
+
+            <!--
             <Component Id='Ionic.Zip.dll' Guid='D1229819-DEF6-4225-AB71-091555D5F371'>
               <File Name='Ionic.Zip.dll' Source='Ionic.Zip.dll' KeyPath='yes' />
             </Component>
+            -->
 
             <Component Id='NetOffice.dll' Guid='1E03216B-96AD-4178-9E2F-54E5B64B34F4'>
               <File Name='NetOffice.dll' Source='NetOffice.dll' KeyPath='yes' />
@@ -86,7 +92,7 @@
 
     <Feature Id="Complete" Level="1">
       <ComponentRef Id="XProof.exe" />
-      <ComponentRef Id="Ionic.Zip.dll" />
+      <ComponentRef Id="XProofCmd.exe" />
       <ComponentRef Id="NetOffice.dll" />
       <ComponentRef Id="OfficeApi.dll" />
       <ComponentRef Id="VBIDEApi.dll" />
@@ -99,9 +105,8 @@
       <RemoveExistingProducts After="InstallFinalize" />
     </InstallExecuteSequence>
 
-    <Icon Id="XProof.exe" SourceFile="XProof.exe" />
-    <Icon Id="XProof.ico" SourceFile="XProof.exe" />
-    <Property Id="ARPPRODUCTICON" Value="XProof.ico" />
+    <Icon Id="XProof.exe" SourceFile="AppIcon.ico" />
+    <Property Id="ARPPRODUCTICON" Value="XProof.exe" />
 
   </Product>
 </Wix>

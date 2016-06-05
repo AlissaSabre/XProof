@@ -105,9 +105,6 @@
     <None Include="Empty.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="installer.wsx">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -118,7 +115,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="wix.bat" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -127,11 +123,14 @@
     <None Include="AppIcon.svg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="AppIcon.ico" />
+    <None Include="AppIcon.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>if "$(ConfigurationName)"=="Release" "$(ProjectDir)wix.bat" "$(ProjectDir)"</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

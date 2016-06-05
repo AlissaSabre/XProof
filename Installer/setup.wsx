@@ -88,6 +88,12 @@
 
       <Directory Id="DesktopFolder" Name="Desktop" />
 
+      <Component Id="RegistryEntry" Guid="D11663BD-936F-43A4-9076-4C6301E8E31E">
+        <RegistryKey Root="HKLM" Key="Software\Alissa Sabre\XProof">
+          <RegistryValue Type="string" Name="InstallDir" Value="[INSTALLDIR]" KeyPath="yes" />
+        </RegistryKey>
+      </Component>
+
     </Directory>
 
     <Feature Id="Complete" Level="1">
@@ -99,6 +105,7 @@
       <ComponentRef Id="WordApi.dll" />
       <ComponentRef Id="Empty.docx" />
       <ComponentRef Id="ProgramMenuDir" />
+      <ComponentRef Id="RegistryEntry" />
     </Feature>
 
     <InstallExecuteSequence>

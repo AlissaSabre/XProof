@@ -15,9 +15,12 @@ namespace Installer
 
         static int Main(string[] args)
         {
+            Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
+            Thread.CurrentThread.CurrentUICulture = CultureInfo.InvariantCulture;
+
             if (args.Length != 2)
             {
-                Console.Out.WriteLine("Usage: Installer setup.msi mainfile.exe");
+                Console.Error.WriteLine("Usage: Installer setup.msi mainfile.exe");
                 return 33;
             }
             try
@@ -35,7 +38,7 @@ namespace Installer
             }
             catch (Exception e)
             {
-                Console.Out.WriteLine(e.Message);
+                Console.Error.WriteLine("Installer.exe: error: {0}", e.Message);
                 return 1;
             }
         }
